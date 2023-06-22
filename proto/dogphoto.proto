@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "proto/generated";
+
+message DogPhotoRequest {
+  string breed = 1;
+}
+
+message DogPhotoResponse {
+  string status = 1;
+  string message = 2;
+}
+
+service DogPhotoService {
+  rpc GetDogPhoto(DogPhotoRequest) returns (DogPhotoResponse) {}
+}
